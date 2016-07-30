@@ -10,7 +10,6 @@
     <orderEntry type="library" name="opencv-310" level="project" />
     <orderEntry type="library" name="apidocs" level="project" />
     <orderEntry type="library" name="commons-codec-1.10-javadoc" level="project" />
-    <orderEntry type="library" name="poi-3" level="project" />
     <orderEntry type="library" name="xmlbeans-2.6.0" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.39-bin" level="project" />

@@ -50,34 +50,32 @@ public class Graph {
 
         XYChart.Series series = new XYChart.Series();
 
-
+//        FOR ALL TIME
         try{
-            String query = "select distinct Violation from violators";
+            String query = "select Violation, count(Violation) from violators group by Violation";
             rs = st.executeQuery(query);
             while(rs.next()){
                 String vio = rs.getString("Violation");
+                int redundant = rs.getInt(2); //2 is the index of Violation column
                 data.add(new Item(WordUtils.capitalize(vio)));
+                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(vio),redundant));
             }
         }catch(Exception ex){
             System.out.println("Error accessing the table: " + ex);
         }
 
-
-//        for (int sheetCount = 0; sheetCount < myWorkBook.getNumberOfSheets(); sheetCount++){
-//            int count = 0;
-//            XSSFSheet mySheet110 = myWorkBook.getSheetAt(sheetCount);
-//
-//            Iterator<Row> rowIterator110 = mySheet110.iterator();
-//
-//            //Traverse each row
-//            rowIterator110.next();
-//            while (rowIterator110.hasNext()) {
-//                Row row = rowIterator110.next();
-//                count++;
+//        //FOR SPECIFIC YY DD MM HH MM SS
+//        try{
+//            String query = "SELECT Violation, count(Violation) FROM violators WHERE Date Violated between '2016-05-01 00:00:00' and '2016-05-15 23:59:00'";
+//            rs = st.executeQuery(query);
+//            while(rs.next()){
+//                String vio = rs.getString("Violation");
+//                int redundant = rs.getInt(2); //2 is the index of Violation column
+//                data.add(new Item(WordUtils.capitalize(vio)));
+//                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(vio),redundant));
 //            }
-//
-//            data.add(new Item(myWorkBook.getSheetName(sheetCount)));
-//            series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(myWorkBook.getSheetName(sheetCount)),count));
+//        }catch(Exception ex){
+//            System.out.println("Error accessing the table: " + ex);
 //        }
 
         bc.getData().addAll(series);
