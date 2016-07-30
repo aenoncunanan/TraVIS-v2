@@ -143,21 +143,25 @@ public class Main extends Application{
             System.out.println("Error accessing the table: " + ex);
         }
 
-        violation.getItems().add(
-                "All Violations"
-        );
+        if (connection) {
+            violation.getItems().add(
+                    "All Violations"
+            );
+        }
 
         violation.setValue("Select a violation");
         grid.add(violation, 2, 1);
 
         Sbtn.setOnAction(event ->{
-            Display display = new Display(plate, violation);
-            stage.setTitle("TraVIS: Results");
-            stage.setScene(
-                    new Scene(display.main(), displayWidth, displayHeight)
-            );
-            stage.setFullScreen(true);                                  //Set the stage in fullscreen mode
-            stage.setFullScreenExitHint("");
+            if (connection) {
+                Display display = new Display(plate, violation);
+                stage.setTitle("TraVIS: Results");
+                stage.setScene(
+                        new Scene(display.main(), displayWidth, displayHeight)
+                );
+                stage.setFullScreen(true);                                  //Set the stage in fullscreen mode
+                stage.setFullScreenExitHint("");
+            }
         });
 
         grid.setTranslateX(455);
@@ -178,7 +182,6 @@ public class Main extends Application{
             );
 
             fade.play();
-            connection = false;
             rootNode.getChildren().addAll(grid, menuBox, updateMessage);
         }
         else {
@@ -230,13 +233,15 @@ public class Main extends Application{
     }
 
     public static void onGraph(){
-        ph.edu.dlsu.Graph graph = new ph.edu.dlsu.Graph();
-        stage.setTitle("TraVIS: Graph");
-        stage.setScene(
-                new Scene(graph.main(), displayWidth, displayHeight)
-        );
-        stage.setFullScreen(true);                                  //Set the stage in fullscreen mode
-        stage.setFullScreenExitHint("");
+        if(connection) {
+            ph.edu.dlsu.Graph graph = new ph.edu.dlsu.Graph();
+            stage.setTitle("TraVIS: Graph");
+            stage.setScene(
+                    new Scene(graph.main(), displayWidth, displayHeight)
+            );
+            stage.setFullScreen(true);                                  //Set the stage in fullscreen mode
+            stage.setFullScreenExitHint("");
+        }
     }
 
     public static void connectDatabase(){

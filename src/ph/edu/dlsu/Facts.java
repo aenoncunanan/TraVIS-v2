@@ -36,7 +36,7 @@ public class Facts {
         Pane rootNode = new Pane();
         rootNode.setPrefSize(displayWidth, displayHeight);
 
-        ImageView imgBackground = Utils.loadImage2View("res/TraVIS.jpg", displayWidth, displayHeight);
+        ImageView imgBackground = Utils.loadImage2View("res/TraVIS_Others.jpg", displayWidth, displayHeight);
         if (imgBackground != null) {
             rootNode.getChildren().add(imgBackground);
         }
@@ -54,7 +54,7 @@ public class Facts {
         grid.add(message, 0, 1);
 
         grid.setTranslateX((displayHeight/2) + 90);
-        grid.setTranslateY((displayHeight/2) + 200);
+        grid.setTranslateY((displayHeight/2) + 195);
 
         final CustomMenuItem home = new CustomMenuItem("home");
         final CustomMenuItem about = new CustomMenuItem("about");
@@ -82,7 +82,7 @@ public class Facts {
         menuBox.setTranslateX((displayWidth/2) - (200));
         menuBox.setTranslateY(630);
 
-        table.setPrefSize(displayWidth/2, displayHeight/3);
+        table.setPrefSize(displayWidth/1.5, displayHeight/2.2);
 
         TableColumn violation = new TableColumn("VIOLATIONS");
         violation.setCellValueFactory(new PropertyValueFactory<>("violation"));
@@ -113,14 +113,15 @@ public class Facts {
         final ViolationList list = new ViolationList(data);
 
         table.getColumns().addAll(violation, penalty);
+
         table.setItems(data);
 
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
         vbox.setPadding(new Insets(10, 0, 0, 10));
         vbox.getChildren().addAll(table);
-        vbox.setTranslateX((displayWidth/2)-350);
-        vbox.setTranslateY(350);
+        vbox.setTranslateX((displayWidth/2)-450);
+        vbox.setTranslateY(250);
 
         rootNode.getChildren().addAll(menuBox, vbox, grid);
 

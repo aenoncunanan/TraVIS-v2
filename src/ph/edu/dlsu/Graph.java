@@ -3,14 +3,24 @@ package ph.edu.dlsu;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import org.apache.commons.lang.WordUtils;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static ph.edu.dlsu.Main.rs;
 import static ph.edu.dlsu.Main.st;
@@ -24,6 +34,10 @@ public class Graph {
     ScreenSize screen = new ScreenSize();
     double displayWidth = screen.getDisplayWidth();
     double displayHeight = screen.getDisplayHeight();
+
+    public static String startDate = "";
+    public static String endDate = "";
+
 
     final ObservableList<Item> data =
             FXCollections.observableArrayList();
@@ -50,33 +64,77 @@ public class Graph {
 
         XYChart.Series series = new XYChart.Series();
 
-//        FOR ALL TIME
-        try{
-            String query = "select Violation, count(Violation) from violators group by Violation";
-            rs = st.executeQuery(query);
-            while(rs.next()){
-                String vio = rs.getString("Violation");
-                int redundant = rs.getInt(2); //2 is the index of Violation column
-                data.add(new Item(WordUtils.capitalize(vio)));
-                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(vio),redundant));
-            }
-        }catch(Exception ex){
-            System.out.println("Error accessing the table: " + ex);
-        }
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
 
-//        //FOR SPECIFIC YY DD MM HH MM SS
-//        try{
-//            String query = "SELECT Violation, count(Violation) FROM violators WHERE Date Violated between '2016-05-01 00:00:00' and '2016-05-15 23:59:00'";
-//            rs = st.executeQuery(query);
-//            while(rs.next()){
-//                String vio = rs.getString("Violation");
-//                int redundant = rs.getInt(2); //2 is the index of Violation column
-//                data.add(new Item(WordUtils.capitalize(vio)));
-//                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(vio),redundant));
-//            }
-//        }catch(Exception ex){
-//            System.out.println("Error accessing the table: " + ex);
-//        }
+        Text text1 = new Text();
+        Text text2 = new Text();
+
+        DatePicker datePickerStart = new DatePicker();
+        DatePicker datePickerEnd = new DatePicker();
+
+        ToggleGroup group = new ToggleGroup();
+        RadioButton button1 = new RadioButton();
+        RadioButton button2 = new RadioButton();
+
+        datePickerStart.setDisable(true);
+        datePickerEnd.setDisable(true);
+
+        text1.setText("from");
+        grid.add(text1, 1, 3);
+
+        datePickerStart.setValue(LocalDate.now());
+        datePickerStart.setOnAction(event -> {
+            if (button2.isSelected()) {
+                startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                endDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                rangeTimeGraph(series, startDate, endDate);
+            }
+        });
+        grid.add(datePickerStart, 1, 4);
+
+        text2.setText("to");
+        grid.add(text2, 1, 5);
+
+        datePickerEnd.setValue(LocalDate.now());
+        datePickerEnd.setOnAction(event -> {
+            if (button2.isSelected()) {
+                startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                rangeTimeGraph(series, startDate, endDate);
+            }
+        });
+        grid.add(datePickerEnd, 1, 6);
+
+        button1.setText("Graph from all time");
+        button1.setToggleGroup(group);
+        button1.setOnAction(event -> {
+            if (button1.isSelected()) {
+                datePickerStart.setDisable(true);
+                datePickerEnd.setDisable(true);
+            }
+            allTimeGraph(series);
+        });
+        grid.add(button1, 1, 1);
+
+        button2.setText("Graph from a range of time");
+        button2.setToggleGroup(group);
+        button2.setOnAction(event -> {
+            if (button2.isSelected()) {
+                datePickerStart.setDisable(false);
+                datePickerEnd.setDisable(false);
+            }
+            startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            rangeTimeGraph(series, startDate, endDate);
+        });
+        grid.add(button2, 1, 2);
+
+        grid.setTranslateX(displayWidth/40);
+        grid.setTranslateY(displayHeight/2 - 50);
 
         bc.getData().addAll(series);
         bc.setTranslateX((displayWidth/2) - ((displayWidth/2)/2));
@@ -111,9 +169,42 @@ public class Graph {
         menuBox.setTranslateX((displayWidth/2) - (200));
         menuBox.setTranslateY(630);
 
-        rootNode.getChildren().addAll(menuBox, bc);
+        rootNode.getChildren().addAll(menuBox, grid, bc);
 
         return rootNode;
+    }
+
+    private void rangeTimeGraph(XYChart.Series series, String startDate, String endDate) {
+        try {
+            String query = "select Violation, count(Violation) from violators where Date_Violated between " +
+                    "'" + startDate + "'" + " and " + "'" + endDate + "'" + " group by Violation";
+            System.out.println("start: " + startDate);
+            System.out.println("End: " + endDate);
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                String trafficVio = rs.getString("Violation");
+                int redundant = rs.getInt(2); //2 is the index of Violation column
+                data.add(new Item(WordUtils.capitalize(trafficVio)));
+                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(trafficVio), redundant));
+            }
+        } catch (Exception ex) {
+            System.out.println("Error accessing the table: " + ex);
+        }
+    }
+
+    private void allTimeGraph(XYChart.Series series) {
+        try {
+            String query = "select Violation, count(Violation) from violators group by Violation";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                String trafficVio = rs.getString("Violation");
+                int redundant = rs.getInt(2); //2 is the index of Violation column
+                data.add(new Item(WordUtils.capitalize(trafficVio)));
+                series.getData().add(new XYChart.Data(WordUtils.capitalizeFully(trafficVio), redundant));
+            }
+        } catch (Exception ex) {
+            System.out.println("Error accessing the table: " + ex);
+        }
     }
 
     public static class Item {

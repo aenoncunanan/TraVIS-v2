@@ -4,18 +4,19 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.apache.commons.lang.WordUtils;
 
-import static ph.edu.dlsu.Main.rs;
-import static ph.edu.dlsu.Main.st;
+import static ph.edu.dlsu.Main.*;
 
 /**
  * Created by ${AenonCunanan} on 26/06/2016.
@@ -81,7 +82,7 @@ public class Display {
         Pane rootNode = new Pane();
         rootNode.setPrefSize(displayWidth, displayHeight);
 
-        ImageView imgBackground = Utils.loadImage2View("res/TraVIS.jpg", displayWidth, displayHeight);
+        ImageView imgBackground = Utils.loadImage2View("res/TraVIS_Others.jpg", displayWidth, displayHeight);
         if (imgBackground != null) {
             rootNode.getChildren().add(imgBackground);
         }
@@ -99,7 +100,7 @@ public class Display {
                                 trafficViolation = rs.getString("Violation");
                                 vehicleClass = rs.getString("Vehicle Class");
                                 vehicleColor = rs.getString("Vehicle Color");
-                                date = rs.getString("Date Violated");
+                                date = rs.getString("Date_Violated");
                                 time = rs. getString("Time Violated");
                                 location = rs.getString("Location Violated");
                                 penalty = rs.getString("Penalty");
@@ -122,7 +123,7 @@ public class Display {
                             plateNumber = rs.getString("Plate Number");
                             vehicleClass = rs.getString("Vehicle Class");
                             vehicleColor = rs.getString("Vehicle Color");
-                            date = rs.getString("Date Violated");
+                            date = rs.getString("Date_Violated");
                             time = rs. getString("Time Violated");
                             location = rs.getString("Location Violated");
                             penalty = rs.getString("Penalty");
@@ -144,7 +145,7 @@ public class Display {
                         if (rs.getString("Violation").equalsIgnoreCase(trafficViolation) && rs.getString("Plate Number").equalsIgnoreCase(plateNumber)){
                             vehicleClass = rs.getString("Vehicle Class");
                             vehicleColor = rs.getString("Vehicle Color");
-                            date = rs.getString("Date Violated");
+                            date = rs.getString("Date_Violated");
                             time = rs. getString("Time Violated");
                             location = rs.getString("Location Violated");
                             penalty = rs.getString("Penalty");
@@ -167,7 +168,7 @@ public class Display {
                             plateNumber = rs.getString("Plate Number");
                             vehicleClass = rs.getString("Vehicle Class");
                             vehicleColor = rs.getString("Vehicle Color");
-                            date = rs.getString("Date Violated");
+                            date = rs.getString("Date_Violated");
                             time = rs. getString("Time Violated");
                             location = rs.getString("Location Violated");
                             penalty = rs.getString("Penalty");
@@ -204,7 +205,7 @@ public class Display {
 
         menuBox = new MenuHBox(home, facts, about, close);
 //        menuBox.setTranslateX(725);
-        menuBox.setTranslateX(485);
+        menuBox.setTranslateX((displayWidth/2) - (200));
         menuBox.setTranslateY(630);
 
         TableColumn vio = new TableColumn("VIOLATION");
@@ -242,7 +243,7 @@ public class Display {
         table.getColumns().addAll(vio, num, vclass, color, date, time, location, penalty);
 //        table.getColumns().addAll(vio, num, vclass, color, date, time);
         table.setItems(data);
-        table.setPrefSize(displayWidth/1.55, displayHeight/3);
+        table.setPrefSize(displayWidth/1.55, displayHeight/2.5);
 //        table.setPrefSize(displayWidth/2, displayHeight/3);
 
         final VBox vbox = new VBox();
@@ -251,9 +252,62 @@ public class Display {
         vbox.getChildren().addAll(table);
         vbox.setTranslateX((displayWidth/2)-450);
 //        vbox.setTranslateX((displayWidth/2)-350);
-        vbox.setTranslateY(350);
+        vbox.setTranslateY(295);
 
-        rootNode.getChildren().addAll(menuBox, vbox);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        Button Sbtn = new Button("search");
+        HBox ShbBtn = new HBox();
+        ShbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        ShbBtn.getChildren().add(Sbtn);
+        grid.add(ShbBtn, 3, 1);
+
+        TextField plate = new TextField();
+        plate.setPromptText("Enter a plate number");
+        grid.add(plate, 1, 1);
+
+        final ComboBox violation = new ComboBox();
+
+        try{
+//            String query = "select * from violators";
+            String query = "select distinct Violation from violators";
+            rs = st.executeQuery(query);
+            while(rs.next()){
+                String vioList = rs.getString("Violation");
+                violation.getItems().add(WordUtils.capitalize(vioList));
+            }
+        }catch(Exception ex){
+            System.out.println("Error accessing the table: " + ex);
+        }
+        if (connection) {
+            violation.getItems().add(
+                    "All Violations"
+            );
+        }
+
+        violation.setValue("Select a violation");
+        grid.add(violation, 2, 1);
+
+        Sbtn.setOnAction(event ->{
+            if (connection) {
+                Display display = new Display(plate, violation);
+                stage.setTitle("TraVIS: Results");
+                stage.setScene(
+                        new Scene(display.main(), displayWidth, displayHeight)
+                );
+                stage.setFullScreen(true);                                  //Set the stage in fullscreen mode
+                stage.setFullScreenExitHint("");
+            }
+        });
+
+        grid.setTranslateX(455);
+        grid.setTranslateY(230);
+
+        rootNode.getChildren().addAll(menuBox, vbox, grid);
 
         return rootNode;
     }
