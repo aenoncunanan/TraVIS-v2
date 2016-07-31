@@ -31,6 +31,11 @@ import static javafx.scene.paint.Color.FIREBRICK;
 
 public class Main extends Application{
 
+    //BACKGROUND IMAGE INITIALIZATION
+    public static String regularBG = "res/TraVIS.jpg";
+    public static String adjustedBG = "res/TraVIS_Others.jpg";
+    //END OF BACKGROUND IMAGE INITIALIZATION
+
     //DATABASE ACCESS INITIALIZATION
     public static final String username = "root";
     public static final String hostname = "localhost";
@@ -82,7 +87,7 @@ public class Main extends Application{
 
         ph.edu.dlsu.MenuHBox menuBox;
 
-        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View("res/TraVIS.jpg", displayWidth, displayHeight);
+        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(regularBG, displayWidth, displayHeight);
         if(imgBackground != null){
             rootNode.getChildren().add(imgBackground);
         }
@@ -143,7 +148,7 @@ public class Main extends Application{
             System.out.println("Error accessing the table: " + ex);
         }
 
-        if (connection) {
+        if(connection) {
             violation.getItems().add(
                     "All Violations"
             );
@@ -182,6 +187,7 @@ public class Main extends Application{
             );
 
             fade.play();
+            connection = false;
             rootNode.getChildren().addAll(grid, menuBox, updateMessage);
         }
         else {
@@ -233,7 +239,7 @@ public class Main extends Application{
     }
 
     public static void onGraph(){
-        if(connection) {
+        if (connection) {
             ph.edu.dlsu.Graph graph = new ph.edu.dlsu.Graph();
             stage.setTitle("TraVIS: Graph");
             stage.setScene(
