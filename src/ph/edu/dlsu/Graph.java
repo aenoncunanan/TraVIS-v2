@@ -178,8 +178,6 @@ public class Graph {
         try {
             String query = "select Violation, count(Violation) from violators where Date_Violated between " +
                     "'" + startDate + "'" + " and " + "'" + endDate + "'" + " group by Violation";
-            System.out.println("start: " + startDate);
-            System.out.println("End: " + endDate);
             rs = st.executeQuery(query);
             while (rs.next()) {
                 String trafficVio = rs.getString("Violation");
