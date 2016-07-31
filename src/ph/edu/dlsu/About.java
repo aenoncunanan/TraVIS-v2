@@ -19,7 +19,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.sound.sampled.AudioInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
+
+import static ph.edu.dlsu.Main.regularBG;
 
 /**
  * Created by ${AenonCunanan} on 24/06/2016.
@@ -38,10 +42,31 @@ public class About {
         Pane rootNode = new Pane();
         rootNode.setPrefSize(displayWidth, displayHeight);
 
-        ImageView imgBackground = Utils.loadImage2View(Main.regularBG, displayWidth, displayHeight);
-        if (imgBackground != null) {
+//LOADING ONLINE IMAGE
+        String imageUrl = regularBG;
+        String destinationFile = "image.jpg";
+
+        File image = new File(destinationFile);
+        if (!image.exists()){
+            try {
+                saveImage.saveImage(imageUrl, destinationFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(destinationFile, displayWidth, displayHeight);
+        if(imgBackground != null){
             rootNode.getChildren().add(imgBackground);
         }
+//END OF LOADING ONLINE IMAGE
+
+//LOADING LOCAL IMAGE
+//        ImageView imgBackground = Utils.loadImage2View(Main.regularBG, displayWidth, displayHeight);
+//        if (imgBackground != null) {
+//            rootNode.getChildren().add(imgBackground);
+//        }
+//END OF LOADING LOCAL IMAGE
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);

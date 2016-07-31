@@ -22,6 +22,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.apache.commons.lang.WordUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -32,8 +34,14 @@ import static javafx.scene.paint.Color.FIREBRICK;
 public class Main extends Application{
 
     //BACKGROUND IMAGE INITIALIZATION
-    public static String regularBG = "res/TraVIS.jpg";
-    public static String adjustedBG = "res/TraVIS_Others.jpg";
+    //LOADING LOCAL IMAGE
+//    public static String regularBG = "res/TraVIS.jpg";
+//    public static String adjustedBG = "res/TraVIS_Others.jpg";
+
+    //LOADING ONLINE IMAGE
+    final saveImage saveImage = new saveImage();
+    public static String regularBG = "https://www.github.com/aenoncunanan/TraVIS-v2/blob/master/res/TraVIS.jpg?raw=true";
+    public static String adjustedBG = "https://www.github.com/aenoncunanan/TraVIS-v2/blob/master/res/TraVIS_Others.jpg?raw=true";
     //END OF BACKGROUND IMAGE INITIALIZATION
 
     //DATABASE ACCESS INITIALIZATION
@@ -87,10 +95,31 @@ public class Main extends Application{
 
         ph.edu.dlsu.MenuHBox menuBox;
 
-        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(regularBG, displayWidth, displayHeight);
+//LOADING ONLINE IMAGE
+        String imageUrl = regularBG;
+        String destinationFile = "image.jpg";
+
+        File image = new File(destinationFile);
+        if (!image.exists()) {
+            try {
+                saveImage.saveImage(imageUrl, destinationFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(destinationFile, displayWidth, displayHeight);
         if(imgBackground != null){
             rootNode.getChildren().add(imgBackground);
         }
+//END OF LOADING ONLINE IMAGE
+
+//LOADING LOCAL IMAGE
+//        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(regularBG, displayWidth, displayHeight);
+//        if(imgBackground != null){
+//            rootNode.getChildren().add(imgBackground);
+//        }
+//END OF LOADING LOCAL IMAGE
 
         final CustomMenuItem about = new CustomMenuItem("About");
         final CustomMenuItem facts = new CustomMenuItem("facts");
@@ -187,7 +216,6 @@ public class Main extends Application{
             );
 
             fade.play();
-            connection = false;
             rootNode.getChildren().addAll(grid, menuBox, updateMessage);
         }
         else {

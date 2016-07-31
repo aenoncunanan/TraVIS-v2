@@ -19,9 +19,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import org.apache.commons.lang.WordUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static ph.edu.dlsu.Main.adjustedBG;
 import static ph.edu.dlsu.Main.rs;
 import static ph.edu.dlsu.Main.st;
 
@@ -46,10 +49,31 @@ public class Graph {
         Pane rootNode = new Pane();
         rootNode.setPrefSize(displayWidth, displayHeight);
 
-        ImageView imgBackground = Utils.loadImage2View(Main.adjustedBG, displayWidth, displayHeight);
-        if (imgBackground != null) {
+//LOADING ONLINE IMAGE
+        String imageUrl = adjustedBG;
+        String destinationFile = "image2.jpg";
+
+        File image = new File(destinationFile);
+        if (!image.exists()) {
+            try {
+                saveImage.saveImage(imageUrl, destinationFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        ImageView imgBackground = ph.edu.dlsu.Utils.loadImage2View(destinationFile, displayWidth, displayHeight);
+        if(imgBackground != null){
             rootNode.getChildren().add(imgBackground);
         }
+//END OF LOADING ONLINE IMAGE
+
+//LOADING LOCAL IMAGE
+//        ImageView imgBackground = Utils.loadImage2View(Main.adjustedBG, displayWidth, displayHeight);
+//        if (imgBackground != null) {
+//            rootNode.getChildren().add(imgBackground);
+//        }
+//END OF LOADING LOCAL IMAGE
 
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
