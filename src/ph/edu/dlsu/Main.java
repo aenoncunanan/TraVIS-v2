@@ -121,7 +121,7 @@ public class Main extends Application{
 //        }
 //END OF LOADING LOCAL IMAGE
 
-        final CustomMenuItem about = new CustomMenuItem("About");
+        final CustomMenuItem about = new CustomMenuItem("about");
         final CustomMenuItem facts = new CustomMenuItem("facts");
         final CustomMenuItem graph = new CustomMenuItem("graph");
         final CustomMenuItem close = new CustomMenuItem("close");
@@ -268,7 +268,7 @@ public class Main extends Application{
 
     public static void onGraph(){
         if (connection) {
-            ph.edu.dlsu.Graph graph = new ph.edu.dlsu.Graph();
+            Graph graph = new Graph();
             stage.setTitle("TraVIS: Graph");
             stage.setScene(
                     new Scene(graph.main(), displayWidth, displayHeight)
