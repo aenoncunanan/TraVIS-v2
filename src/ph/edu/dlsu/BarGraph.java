@@ -24,9 +24,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static ph.edu.dlsu.Main.adjustedBG;
-import static ph.edu.dlsu.Main.rs;
-import static ph.edu.dlsu.Main.st;
+import static ph.edu.dlsu.Main.*;
 
 /**
  * Created by ${AenonCunanan} on 24/06/2016.
@@ -50,8 +48,8 @@ public class BarGraph {
         rootNode.setPrefSize(displayWidth, displayHeight);
 
 //LOADING ONLINE IMAGE
-        String imageUrl = adjustedBG;
-        String destinationFile = "image2.jpg";
+        String imageUrl = graphBG;
+        String destinationFile = "image3.jpg";
 
         File image = new File(destinationFile);
         if (!image.exists()) {
@@ -69,7 +67,7 @@ public class BarGraph {
 //END OF LOADING ONLINE IMAGE
 
 //LOADING LOCAL IMAGE
-//        ImageView imgBackground = Utils.loadImage2View(Main.adjustedBG, displayWidth, displayHeight);
+//        ImageView imgBackground = Utils.loadImage2View(Main.graphBG, displayWidth, displayHeight);
 //        if (imgBackground != null) {
 //            rootNode.getChildren().add(imgBackground);
 //        }
@@ -159,9 +157,9 @@ public class BarGraph {
         bc.getData().addAll(series);
         bc.setTranslateX((displayWidth/2) - ((displayWidth/2)/2));
 //        bc.setTranslateY((displayHeight/4) + (150));
-        bc.setTranslateY((displayHeight/7) + (150));
+        bc.setTranslateY((displayHeight/7) - (50));
 //        bc.setPrefSize(displayWidth/2, displayHeight/2.6);
-        bc.setPrefSize(displayWidth/2, displayHeight-390);
+        bc.setPrefSize(displayWidth - 370, displayHeight - 200);
 
         final CustomMenuItem home = new CustomMenuItem("home");
         final CustomMenuItem back = new CustomMenuItem("back");

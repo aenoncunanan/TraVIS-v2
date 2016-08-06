@@ -37,11 +37,13 @@ public class Main extends Application{
     //LOADING LOCAL IMAGE
 //    public static String regularBG = "res/TraVIS.jpg";
 //    public static String adjustedBG = "res/TraVIS_Others.jpg";
+    //    public static String graphBG = "res/TraVIS_Graph.jpg";
 
     //LOADING ONLINE IMAGE
     final saveImage saveImage = new saveImage();
     public static String regularBG = "https://www.github.com/aenoncunanan/TraVIS-v2/blob/master/res/TraVIS.jpg?raw=true";
     public static String adjustedBG = "https://www.github.com/aenoncunanan/TraVIS-v2/blob/master/res/TraVIS_Others.jpg?raw=true";
+    public static String graphBG = "https://www.github.com/aenoncunanan/TraVIS-v2/blob/master/res/TraVIS_Graph.jpg?raw=true";
     //END OF BACKGROUND IMAGE INITIALIZATION
 
     //DATABASE ACCESS INITIALIZATION

@@ -50,8 +50,8 @@ public class LineGraph {
         rootNode.setPrefSize(displayWidth, displayHeight);
 
 //LOADING ONLINE IMAGE
-        String imageUrl = adjustedBG;
-        String destinationFile = "image2.jpg";
+        String imageUrl = graphBG;
+        String destinationFile = "image3.jpg";
 
         File image = new File(destinationFile);
         if (!image.exists()) {
@@ -69,7 +69,7 @@ public class LineGraph {
 //END OF LOADING ONLINE IMAGE
 
 //LOADING LOCAL IMAGE
-//        ImageView imgBackground = Utils.loadImage2View(Main.adjustedBG, displayWidth, displayHeight);
+//        ImageView imgBackground = Utils.loadImage2View(Main.graphBG, displayWidth, displayHeight);
 //        if (imgBackground != null) {
 //            rootNode.getChildren().add(imgBackground);
 //        }
@@ -184,9 +184,9 @@ public class LineGraph {
         lc.getData().addAll(series);
         lc.setTranslateX((displayWidth/2) - ((displayWidth/2)/2));
 //        lc.setTranslateY((displayHeight/4) + (150));
-        lc.setTranslateY((displayHeight/7) + (150));
+        lc.setTranslateY((displayHeight/7) - (50));
 //        lc.setPrefSize(displayWidth/2, displayHeight/2.6);
-        lc.setPrefSize(displayWidth/2, displayHeight-390);
+        lc.setPrefSize(displayWidth - 370, displayHeight - 200);
 
         final CustomMenuItem home = new CustomMenuItem("home");
         final CustomMenuItem back = new CustomMenuItem("back");
@@ -222,11 +222,8 @@ public class LineGraph {
             rs = st.executeQuery(query);
             while (rs.next()) {
                 if (rs.getString("Violation").equalsIgnoreCase(vio)) {
-                    System.out.println(rs.getString("Violation"));
                     String date = rs.getString("Date_Violated");
-                    System.out.println(date);
                     int redundant = rs.getInt(2); //get the count value
-                    System.out.println(redundant);
                     data.add(new Item(date));
                     series.getData().add(new XYChart.Data(date, redundant));
                 }
@@ -243,11 +240,8 @@ public class LineGraph {
             rs = st.executeQuery(query);
             while (rs.next()) {
                 if (rs.getString("Violation").equalsIgnoreCase(vio)) {
-                    System.out.println(rs.getString("Violation"));
                     String date = rs.getString("Date_Violated");
-                    System.out.println(date);
                     int redundant = rs.getInt(2); //get the count value
-                    System.out.println(redundant);
                     data.add(new Item(date));
                     series.getData().add(new XYChart.Data(date, redundant));
                 }
