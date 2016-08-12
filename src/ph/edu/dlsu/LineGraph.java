@@ -218,6 +218,7 @@ public class LineGraph {
 
     private void rangeTimeGraph(XYChart.Series series, String startDate, String endDate) {
         try {
+            series.getData().clear();
             String vio = (String) violation.getValue();
             String query = "select Violation, count(Violation), Date_Violated from violators where Date_Violated between " +
                     "'" + startDate + "'" + " and " + "'" + endDate + "'" + " group by Violation, Date_Violated order by Date_Violated ASC";
@@ -237,6 +238,7 @@ public class LineGraph {
 
     private void allTimeGraph(XYChart.Series series) {
         try {
+            series.getData().clear();
             String vio = (String) violation.getValue();
             String query = "select Violation, count(Violation), Date_Violated from violators group by Violation, Date_Violated order by Date_Violated ASC";
             rs = st.executeQuery(query);
