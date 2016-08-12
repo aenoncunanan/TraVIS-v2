@@ -10,6 +10,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -38,7 +39,6 @@ public class BarGraph {
 
     public static String startDate = "";
     public static String endDate = "";
-
 
     final ObservableList<Item> data =
             FXCollections.observableArrayList();
@@ -102,6 +102,8 @@ public class BarGraph {
         RadioButton button1 = new RadioButton();
         RadioButton button2 = new RadioButton();
 
+        Button goButton = new Button();
+
         datePickerStart.setDisable(true);
         datePickerEnd.setDisable(true);
 
@@ -113,7 +115,6 @@ public class BarGraph {
             if (button2.isSelected()) {
                 startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 endDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                rangeTimeGraph(series, startDate, endDate);
             }
         });
         grid.add(datePickerStart, 1, 4);
@@ -126,7 +127,6 @@ public class BarGraph {
             if (button2.isSelected()) {
                 startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                rangeTimeGraph(series, startDate, endDate);
             }
         });
         grid.add(datePickerEnd, 1, 6);
@@ -136,7 +136,6 @@ public class BarGraph {
         button1.setOnMouseClicked(event -> {
             datePickerStart.setDisable(true);
             datePickerEnd.setDisable(true);
-            allTimeGraph(series);
         });
         grid.add(button1, 1, 1);
 
@@ -145,11 +144,21 @@ public class BarGraph {
         button2.setOnMouseClicked(event -> {
             datePickerStart.setDisable(false);
             datePickerEnd.setDisable(false);
-            startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            rangeTimeGraph(series, startDate, endDate);
         });
         grid.add(button2, 1, 2);
+
+        goButton.setText("Graph");
+        grid.add(goButton, 1, 7);
+        goButton.setOnMouseClicked(event -> {
+            startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            if (button1.isSelected()) {
+                allTimeGraph(series);
+            }
+            else if (button2.isSelected()){
+                rangeTimeGraph(series, startDate, endDate);
+            }
+        });
 
         grid.setTranslateX(displayWidth/40);
         grid.setTranslateY(displayHeight/2 - 50);

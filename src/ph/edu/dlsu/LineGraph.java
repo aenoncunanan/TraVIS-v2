@@ -10,10 +10,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -110,12 +107,6 @@ public class LineGraph {
             System.out.println("Error accessing the table: " + ex);
         }
 
-        if(connection) {
-            violation.getItems().add(
-                    "All Violations"
-            );
-        }
-
         violation.setValue("Select a violation");
         grid.add(violation, 1, 1);
 
@@ -129,6 +120,8 @@ public class LineGraph {
         RadioButton button1 = new RadioButton();
         RadioButton button2 = new RadioButton();
 
+        Button goButton = new Button();
+
         datePickerStart.setDisable(true);
         datePickerEnd.setDisable(true);
 
@@ -140,7 +133,6 @@ public class LineGraph {
             if (button2.isSelected()) {
                 startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 endDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                rangeTimeGraph(series, startDate, endDate);
             }
         });
         grid.add(datePickerStart, 1, 5);
@@ -153,7 +145,6 @@ public class LineGraph {
             if (button2.isSelected()) {
                 startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                rangeTimeGraph(series, startDate, endDate);
             }
         });
         grid.add(datePickerEnd, 1, 7);
@@ -163,7 +154,6 @@ public class LineGraph {
         button1.setOnMouseClicked(event -> {
             datePickerStart.setDisable(true);
             datePickerEnd.setDisable(true);
-            allTimeGraph(series);
         });
         grid.add(button1, 1, 2);
 
@@ -174,9 +164,21 @@ public class LineGraph {
             datePickerEnd.setDisable(false);
             startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            rangeTimeGraph(series, startDate, endDate);
         });
         grid.add(button2, 1, 3);
+
+        goButton.setText("Graph");
+        grid.add(goButton, 1, 8);
+        goButton.setOnMouseClicked(event -> {
+            startDate = datePickerStart.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            endDate = datePickerEnd.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            if (button1.isSelected()) {
+                allTimeGraph(series);
+            }
+            else if (button2.isSelected()){
+                rangeTimeGraph(series, startDate, endDate);
+            }
+        });
 
         grid.setTranslateX(displayWidth/40);
         grid.setTranslateY(displayHeight/2 - 50);
