@@ -37,8 +37,6 @@ public class BarGraph {
     double displayWidth = screen.getDisplayWidth();
     double displayHeight = screen.getDisplayHeight();
 
-    public boolean flag = false;
-
     public static String startDate = "";
     public static String endDate = "";
 
@@ -138,7 +136,6 @@ public class BarGraph {
         button1.setOnMouseClicked(event -> {
             datePickerStart.setDisable(true);
             datePickerEnd.setDisable(true);
-            flag = true;
         });
         grid.add(button1, 1, 1);
 
@@ -147,7 +144,6 @@ public class BarGraph {
         button2.setOnMouseClicked(event -> {
             datePickerStart.setDisable(false);
             datePickerEnd.setDisable(false);
-            flag = false;
         });
         grid.add(button2, 1, 2);
 
@@ -201,9 +197,7 @@ public class BarGraph {
 
     private void rangeTimeGraph(XYChart.Series series, String startDate, String endDate) {
         try {
-            if (flag) {
-                series.getData().clear();
-            }
+            series.getData().clear();
             String query = "select Violation, count(Violation) from violators where Date_Violated between " +
                     "'" + startDate + "'" + " and " + "'" + endDate + "'" + " group by Violation";
             rs = st.executeQuery(query);
@@ -220,9 +214,7 @@ public class BarGraph {
 
     private void allTimeGraph(XYChart.Series series) {
         try {
-            if (!flag) {
-                series.getData().clear();
-            }
+            series.getData().clear();
             String query = "select Violation, count(Violation) from violators group by Violation";
             rs = st.executeQuery(query);
             while (rs.next()) {

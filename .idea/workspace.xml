@@ -7,20 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b15153a-fd4e-4273-bd77-ca4f3f596938" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItemSub.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/home.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/homeb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/results.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/Thumbs.db" afterPath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/TraVIS-v2.jar" afterPath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/TraVIS-v2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/About.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/About.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Graph.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Graph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/MenuHBox.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/MenuHBox.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Utils.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/TraVIS_Graph.jpg" afterPath="$PROJECT_DIR$/res/TraVIS_Graph.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph$Item.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph$Item.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshots/facts.png" afterPath="$PROJECT_DIR$/screenshots/facts.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" />
     </list>
     <ignored path="TraVIS-v1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,23 +42,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LineGraph.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="208" column="50" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BarGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="192" column="50" selection-start-line="192" selection-start-column="50" selection-end-line="192" selection-end-column="50" />
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#Main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -110,8 +97,8 @@
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItemSub.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" />
       </list>
     </option>
   </component>
@@ -146,8 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -204,7 +189,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -526,7 +513,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2056213" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20623146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20623146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -844,16 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
-          <folding>
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -896,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,21 +886,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="201" column="27" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="192" column="50" selection-start-line="192" selection-start-column="50" selection-end-line="192" selection-end-column="50" />
+        <state relative-caret-position="170">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="208" column="50" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
