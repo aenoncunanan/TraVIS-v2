@@ -165,7 +165,7 @@ public class BarGraph {
         });
 
         grid.setTranslateX(displayWidth/40);
-        grid.setTranslateY(displayHeight/2 - 50);
+        grid.setTranslateY(displayHeight/2 - 130);
 
         bc.getData().addAll(series);
         bc.setTranslateX((displayWidth/2) - ((displayWidth/2)/2));
@@ -191,8 +191,7 @@ public class BarGraph {
         });
 
         menuBox = new MenuHBox(home, back, close);
-//        menuBox.setTranslateX(725);
-        menuBox.setTranslateX((displayWidth/2) - (150));
+        menuBox.setTranslateX((displayWidth/2) + (35));
         menuBox.setTranslateY(630);
 
         rootNode.getChildren().addAll(menuBox, grid, bc);

@@ -20,6 +20,12 @@ public class MenuHBox extends HBox{
 
     }
 
+    public MenuHBox(CustomMenuItemSub item1, CustomMenuItemSub item2){
+
+        getChildren().addAll(item1, item2);
+
+    }
+
     private Line createSeparator(){                                         //line separates the item menu
 
         Line sep = new Line();

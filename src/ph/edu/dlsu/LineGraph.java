@@ -181,7 +181,7 @@ public class LineGraph {
         });
 
         grid.setTranslateX(displayWidth/40);
-        grid.setTranslateY(displayHeight/2 - 50);
+        grid.setTranslateY(displayHeight/2 - 130);
 
         lc.getData().addAll(series);
         lc.setTranslateX((displayWidth/2) - ((displayWidth/2)/2));
@@ -207,8 +207,7 @@ public class LineGraph {
         });
 
         menuBox = new MenuHBox(home, back, close);
-//        menuBox.setTranslateX(725);
-        menuBox.setTranslateX((displayWidth/2) - (150));
+        menuBox.setTranslateX((displayWidth/2) + (35));
         menuBox.setTranslateY(630);
 
         rootNode.getChildren().addAll(menuBox, grid, lc);

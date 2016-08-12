@@ -22,7 +22,8 @@ public class Utils {
             img.setFitHeight(height);
 
         } catch (IOException e) {
-            System.out.println("Failed to load image!");
+//            System.out.println("Failed to load image!");
+            System.out.println("Failed to load image! \nPlease connect to the internet to download the images needed.");
         }
         return img;
 

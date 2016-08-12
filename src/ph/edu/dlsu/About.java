@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -103,10 +104,13 @@ public class About {
         message.setTextAlignment(TextAlignment.CENTER);
         grid.add(message, 0, 1);
 
+        Tooltip tooltip = new Tooltip("Click this button to let Travis introduce himself to you.");
+
         Button speakBtn = new Button("speak");
         HBox speakHBox = new HBox();
         speakHBox.setAlignment(Pos.BOTTOM_RIGHT);
         speakHBox.getChildren().add(speakBtn);
+        speakBtn.setTooltip(tooltip);
         grid.add(speakHBox, 0, 2);
 
         grid.setTranslateX(420);

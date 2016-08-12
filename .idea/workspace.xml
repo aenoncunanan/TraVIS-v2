@@ -7,20 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b15153a-fd4e-4273-bd77-ca4f3f596938" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/image2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/image3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/image2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/image3.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItemSub.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/TraVIS-v2.jar" afterPath="$PROJECT_DIR$/out/artifacts/TraVIS_v2_jar/TraVIS-v2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph$Item.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph$Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/BarGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/LineGraph$Item.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/LineGraph$Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/LineGraph.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/LineGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/About.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/About.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Graph.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Graph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/MenuHBox.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/MenuHBox.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Utils.class" afterPath="$PROJECT_DIR$/out/production/TraVIS-v2/ph/edu/dlsu/Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/TraVIS_Graph.jpg" afterPath="$PROJECT_DIR$/res/TraVIS_Graph.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" afterPath="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" />
     </list>
     <ignored path="TraVIS-v1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +45,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BarGraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LineGraph.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="208" column="50" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BarGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="192" column="50" selection-start-line="192" selection-start-column="50" selection-end-line="192" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,21 +95,23 @@
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuVBox.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/ScreenSize.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuTitle.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItem.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/about.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/wViolationwNumber.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/ViolationList.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/DBConnect.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/saveImage.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Facts.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Display.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Main.java" />
-        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/About.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBoxSub.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItemSub.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java" />
         <option value="$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java" />
+        <option value="$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java" />
       </list>
     </option>
   </component>
@@ -135,6 +147,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -192,7 +205,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -559,21 +571,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="159" column="44" selection-start-line="159" selection-start-column="44" selection-end-line="159" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -809,16 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/saveImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -826,14 +813,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,38 +826,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
-          <folding>
-            <element signature="e#2405#2516#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="94" column="61" selection-start-line="94" selection-start-column="61" selection-end-line="94" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -903,21 +854,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
-          <caret line="177" column="43" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
+        <state relative-caret-position="306">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/About.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="106" column="45" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2442#2553#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBoxSub.java" />
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/MenuHBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/CustomMenuItemSub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="104" column="48" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/BarGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="192" column="50" selection-start-line="192" selection-start-column="50" selection-end-line="192" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/edu/dlsu/LineGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="208" column="50" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
