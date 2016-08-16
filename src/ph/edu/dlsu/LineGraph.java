@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
@@ -80,6 +81,7 @@ public class LineGraph {
 
         lc.setTitle("Traffic Violation Summary");
         lc.setLegendVisible(false);
+        lc.setCursor(Cursor.CROSSHAIR);
         xAxis.setLabel("Time");
         yAxis.setLabel("Number");
 

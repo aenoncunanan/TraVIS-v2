@@ -14,12 +14,14 @@ import javafx.scene.text.TextAlignment;
  */
 public class CustomMenuItemSub extends StackPane {
 
+    public final static float width = 155;
+
     public CustomMenuItemSub(String name){                                         //This class is made to design the menu base
 
         Rectangle bg = new Rectangle(245, 40);
         bg.setArcHeight(50);
         bg.setArcWidth(50);
-        bg.setWidth(100);
+        bg.setWidth(width);
         bg.setHeight(100);
         bg.setFill(Color.web("#ffffff"));
         bg.setOpacity(0.4);

@@ -57,11 +57,11 @@ public class Graph {
         final CustomMenuItem facts = new CustomMenuItem("facts");
         final CustomMenuItem close = new CustomMenuItem("close");
 
-        final CustomMenuItemSub line = new CustomMenuItemSub("Line\nGraph");
-        final CustomMenuItemSub bar = new CustomMenuItemSub("Bar\nGraph");
+        final CustomMenuItemSub line = new CustomMenuItemSub("Trend Plot");
+        final CustomMenuItemSub bar = new CustomMenuItemSub("Histogram");
 
         menuBoxSub = new MenuHBox(bar, line);
-        menuBoxSub.setTranslateX(displayWidth/2 - (menuBoxSub.getScaleX() * 100));
+        menuBoxSub.setTranslateX(displayWidth/2 - (menuBoxSub.getScaleX() * CustomMenuItemSub.width));
         menuBoxSub.setTranslateY(displayHeight/2 + 50);
 
         bar.setOnMouseClicked(event -> {
