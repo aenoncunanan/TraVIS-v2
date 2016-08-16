@@ -1,5 +1,6 @@
 package ph.edu.dlsu;
 
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
@@ -63,6 +64,9 @@ public class Graph {
         menuBoxSub = new MenuHBox(bar, line);
         menuBoxSub.setTranslateX(displayWidth/2 - (menuBoxSub.getScaleX() * CustomMenuItemSub.width));
         menuBoxSub.setTranslateY(displayHeight/2 + 50);
+
+        bar.setCursor(Cursor.HAND);
+        line.setCursor(Cursor.HAND);
 
         bar.setOnMouseClicked(event -> {
             BarGraph barGraph = new BarGraph();
