@@ -197,7 +197,7 @@ public class BarGraph {
 
     private void rangeTimeGraph(XYChart.Series series, String startDate, String endDate) {
         try {
-            series.getData().clear();
+//            series.getData().clear();
             String query = "select Violation, count(Violation) from violators where Date_Violated between " +
                     "'" + startDate + "'" + " and " + "'" + endDate + "'" + " group by Violation";
             rs = st.executeQuery(query);
@@ -214,7 +214,7 @@ public class BarGraph {
 
     private void allTimeGraph(XYChart.Series series) {
         try {
-            series.getData().clear();
+//            series.getData().clear();
             String query = "select Violation, count(Violation) from violators group by Violation";
             rs = st.executeQuery(query);
             while (rs.next()) {
